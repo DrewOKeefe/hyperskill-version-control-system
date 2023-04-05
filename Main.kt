@@ -69,12 +69,6 @@ fun main(args: Array<String>) {
                 for (file in index.readLines()) {
                     File("./vcs/commits/$commitCode/$file").writeText(File(file).readText())
                 }
-//                val rootDir = File(".")
-//                for (file in rootDir.listFiles()) {
-//                    File("./vcs/commits/$commitCode/$file").writeText("${file.readLines()}")
-//                    println("passed writeText")
-//                }
-
                 val list = mutableListOf<String>(log.readLines().joinToString("\n"))
                 log.writeText("""
                     commit $commitCode
